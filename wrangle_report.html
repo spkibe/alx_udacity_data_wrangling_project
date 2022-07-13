@@ -13079,26 +13079,32 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Data-warangling-report">Data warangling report<a class="anchor-link" href="#Data-warangling-report">&#182;</a></h3><p>The first step of data wrangling is gathering of the datasets. There are many ways of <strong>gathering data</strong>, the one I used for this project are</p>
 <blockquote><ol>
-<li>dowloading data manually.
-some data are readly available for downloading. Twitter Archive dataset was downloaded by click on it's link and download was initiated.</li>
-<li><p>Downloaodng file programatically using python requests library.
-we use request to download the image image prediction data. Dowloading data this way is sai to be scalable and reproducable.</p>
+<li><p>dowloading data manually.<br>
+some data are readly available for downloading. Twitter Archive dataset was downloaded by click on it's link and download was initiated.<br></p>
 </li>
-<li><p>Access data through APIs.
-APIs allows simple access to data easily. For eaxmple in this project we used twitter api to access additional data for our twitter archive dataset, we just had to used tweets_ids's to get the data we required for the current information we have on each dog.</p>
+<li><p>Downloaodng file programatically using python requests library.<br>
+we use request to download the image image prediction data. Dowloading data this way is sai to be scalable and reproducable.<br></p>
+</li>
+<li><p>Access data through APIs.<br>
+APIs allows simple access to data easily. For eaxmple in this project we used twitter api to access additional data for our twitter archive dataset, we just had to used tweets_ids's to get the data we required for the current information we have on each dog.<br></p>
 </li>
 </ol>
 </blockquote>
 <h3 id="ASSESSING-DATASETS.">ASSESSING DATASETS.<a class="anchor-link" href="#ASSESSING-DATASETS.">&#182;</a></h3><p>This is the second step in data wrangling process. Data can be assessed both vissualy and programmatically. We asses data to check for data quality and tidiness isssues. When assessing data, I used the <strong>Data Quality Dimensions</strong> to guide myself to find the data issues.
 From this step I noticed the following data issues in the datasets above:</p>
-<h4 id="Quality-Issues:">Quality Issues:<a class="anchor-link" href="#Quality-Issues:">&#182;</a></h4><h4 id="Using-Visual-Assessment.">Using Visual Assessment.<a class="anchor-link" href="#Using-Visual-Assessment.">&#182;</a></h4><blockquote><p>Thereuse was use of <em>None</em> to represent missing data instead of null value i.e np.nan, that can recognised by data tools as null values.
-Some names looked incomplete. I.e 'a' as name looked invalid to me.
-A column had html tags in it.</p>
-<h4 id="Using-Programatic-Assessment.">Using Programatic Assessment.<a class="anchor-link" href="#Using-Programatic-Assessment.">&#182;</a></h4><p>Some columns were represented in wrong data type formats. i.e timestamp was in string instead of datetiem  datatype.
-The were some missing data in the Archive twitter data sets.</p>
+<h4 id="Quality-Issues:">Quality Issues:<a class="anchor-link" href="#Quality-Issues:">&#182;</a></h4><h4 id="Using-Visual-Assessment.">Using Visual Assessment.<a class="anchor-link" href="#Using-Visual-Assessment.">&#182;</a></h4><blockquote><p>Thereuse was use of <em>None</em> to represent missing data instead of null value i.e np.nan, that can recognised by data tools as null values.<br>
+There are missing data in the archive dataset<br>
+Some names looked incomplete. I.e 'a' as name looked invalid to me.<br>
+A <strong>source column</strong> had html tags in it.<br>
+There are several Id's columns in the dataset<br>
+Non-uniform dog-breed names<br></p>
+<h4 id="Using-Programatic-Assessment.">Using Programatic Assessment.<a class="anchor-link" href="#Using-Programatic-Assessment.">&#182;</a></h4><p>Some columns were represented in wrong data type formats. i.e timestamp was in string instead of datetiem  datatype.<br>
+There was retweed data in the archive dataset.<br>
+There were tweets missing their images.<br>
+Rating values, rating_numerator and rating_denominator, were incorrect.<br></p>
 </blockquote>
-<h4 id="Tidiness-Issues.">Tidiness Issues.<a class="anchor-link" href="#Tidiness-Issues.">&#182;</a></h4><blockquote><p>I noticed in twitter Archive data that the dogs stages were observations and it violated the "Each observation forms a row"
-The three datasets were a single observation unit and it had to be put in one table.</p>
+<h4 id="Tidiness-Issues.">Tidiness Issues.<a class="anchor-link" href="#Tidiness-Issues.">&#182;</a></h4><blockquote><p>I noticed in twitter Archive data that the dogs stages were observations and it violated the "Each observation forms a row"<br>
+The three datasets were a single observation unit and it had to be put in one table.<br></p>
 </blockquote>
 <h3 id="Data-Cleaning.">Data Cleaning.<a class="anchor-link" href="#Data-Cleaning.">&#182;</a></h3><blockquote><p>In this 3rd-step of data wrangling I <strong>clean all issues</strong> I documented on the Assessment step. Before I started data cleaning I made copies of the data to avoid affecting the original datasets. I used <strong>define-code-test framework</strong> in this step to clean the datasets. I cleaned data to merged all the required required rules of tidy data.</p>
 </blockquote>
@@ -13109,19 +13115,6 @@ new csv-file. I named the new csv file as
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
 </div>
     </div>
   </div>
